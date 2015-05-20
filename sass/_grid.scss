@@ -1,0 +1,29 @@
+
+/* ==========================================================================
+   Grid 12col
+   ========================================================================== */
+
+// grid variables
+$grid-columns: 12;
+$grid-max-width: 65em;
+
+.container, .row {
+    @include clearfix;
+    }
+
+[class*='col-'] {
+    float: left;
+    padding: 1em;
+    width: 100%;
+    min-height: 1px; 
+}
+
+.container {      
+        width: 95%;
+        max-width: $grid-max-width;     
+        }
+    @for $i from 1 through $grid-columns {      
+        .col-#{$i} {         
+            width: 100% / $grid-columns * $i;   
+            }
+        }
